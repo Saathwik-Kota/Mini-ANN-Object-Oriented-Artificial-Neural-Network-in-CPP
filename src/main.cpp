@@ -35,11 +35,11 @@ int main() {
     myNet.train(X_train, y_train, 1001); 
 
     cout << "\n--- Quick Verification ---\n";
-    MathVector test_input = MathVector(X_train[0]);
-    MathVector pred = myNet.predict(test_input);
+    vector<double> test_input = X_train[0];
+    vector<double> pred = myNet.predict(test_input);
     
     cout << "Expected Output: " << y_train[0][0] << "\n";
-    cout << "Network Output:  " << fixed << setprecision(4) << pred.data[0] << "\n";
+    cout << "Network Output:  " << fixed << setprecision(4) << pred[0] << "\n";
 
     myNet.saveModel("data/trained_classification_model.csv");
     
