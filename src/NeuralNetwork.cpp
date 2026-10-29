@@ -27,6 +27,12 @@ MathVector NeuralNetwork::predict(const MathVector& inputs) {
     return current_signal;
 }
 
+vector<double> NeuralNetwork::predict(const vector<double>& inputs) {
+    MathVector math_inputs(inputs);
+    MathVector math_outputs = this->predict(math_inputs);
+    return math_outputs.data;
+}
+
 void NeuralNetwork::train(const vector<MathVector>& X, const vector<MathVector>& y, int epochs) {
     for (int epoch = 0; epoch < epochs; ++epoch) {
         double total_loss = 0.0;

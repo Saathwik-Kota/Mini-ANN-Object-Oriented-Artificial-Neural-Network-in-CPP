@@ -19,7 +19,9 @@ public:
     ~NeuralNetwork();
 
     void addLayer(int numNeurons, int numInputsPerNeuron, IActivation* activation);
+
     MathVector predict(const MathVector& inputs);
+    std::vector<double> predict(const std::vector<double>& inputs);
     
     void train(const vector<MathVector>& X, const vector<MathVector>& y, int epochs);
     void train(const vector<vector<double>>& X, const vector<vector<double>>& y, int epochs);
