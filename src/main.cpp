@@ -10,7 +10,7 @@ int main() {
     vector<vector<double>> X_train;
     vector<vector<double>> y_train;
 
-    string dataset = "data/data.csv"; 
+    string dataset = "data/Data.csv"; 
     int targetColumns = 1; 
     
     cout << "Loading dataset...\n";
